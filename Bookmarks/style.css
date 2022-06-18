@@ -1,0 +1,163 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+body{
+    background: url('media/background-girl.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease opacity;
+    z-index: 10;
+    pointer-events: none;
+}
+header {
+    position: sticky;
+    top:0;
+    z-index:8;
+}
+.content-top {
+    height: auto;
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 40em;
+    margin:0 auto;
+    position: relative;
+    border-radius: 5px;
+    /* z-index: 7; */
+    }
+.content {
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 40em;
+    margin:0 auto;
+    position: relative;
+    border-radius: 5px;
+    }
+.floater{
+    background-color: gray;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom:30px;
+    z-index: 11;
+}
+.floater .form-control /*, .form-link*/{
+    padding: 30px 20px;
+    border:none;
+    box-shadow: none;
+    font-size: 14px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+input[type=text]{
+    background-color: rgba(0, 225, 165, 0.592);
+    /* min-width: 50rem; */
+}
+.floater-bottom /*, .form-link*/ {
+    padding: 6px 10px 7px;
+    text-align: right;
+    border-top: 1px solid whitesmoke;
+    /* display: block; */
+    /* overflow: hidden; */
+}
+.floater-bottom button{
+    padding: 4px 30px;
+    font-size: 15px;
+}
+/* .form-link{
+    background-color: rgba(98, 255, 0, 0.581);
+    border: none;
+    border-radius: 5px;
+    width: 85%;
+    float: left;
+    box-shadow: none;
+    overflow: hidden;
+} */
+body.show-floater .floater{
+    transform: scale(1.1);
+}
+body.show-floater .floater input[type=text]{
+    padding: 50px 30px;
+    font-size: 18px;
+}
+/* body.show-floater input[type=text]{
+    background-color: rgba(255, 225, 0, 0.8);
+} */
+body.show-floater .overlay{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* ================================= */
+.bookmark-list{
+    position: absolute;
+    z-index: 9;
+}
+
+.bookmark {
+    background-color: rgba(128, 128, 128, 0.500);
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 25px 20px;
+    transition: 0.3s ease all;
+    font-size:19px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.bookmark:hover {
+    transform: scale(1.075);
+    transition: 0.3s ease all;
+    text-decoration: none;
+    color: #1ce;
+}
+a {
+    color:inherit;
+    text-decoration:none;
+}
+.bookmark .img {
+    background-color:white;
+    border-radius:3px;
+    background-image: url('media/background-girl.jpg');
+    background-size: cover;
+    width: 130px;
+    height: 80px;
+    margin-right: 20px;
+    
+}
+
+.bi-bookmark-fill{
+    color:grey;
+}
+.bookmark .delete-bookmark{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+
+}
+.delete-bookmark:hover {
+    color: red;
+}
+.bookmark:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.bookmark:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* .footer{
+    position: static;
+    bottom: 0;
+    left: 10px;
+    color: whitesmoke;
+    opacity: 0.5;
+    font-size: 10px;
+} */

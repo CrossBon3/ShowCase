@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll Progress</title>
+    <style>
+        body{
+            background-image: url('../media/background-girl.jpg');
+            background-size:cover;
+            background-attachment: fixed;
+        }
+        .content{
+            background-color:rgba(255, 255, 255, 0.4);
+            margin:10px;
+            padding: 30px;
+            font-size: 20px;
+            line-height: 1.5;
+            min-height: 4000px;
+        }
+        .scroll-progress{
+            position: fixed;
+            top:0;
+            left: 0;
+            background-color: rgb(0, 229, 255);
+            min-height: 4px;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <div class="container">
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi de
+                serunt maxime vero fac
+                ilis nisi itaque incidunt quis similique ut ad veniam
+                 blanditiis hic excep
+                turi illum, in consequatur eligendi amet officiis?
+                Lorem ipsum dolor sit, ame
+                t consectetur adipisicing elit. Maxime illo, dignissimos, no
+                strum voluptatem delectus quia magni minus nisi omn
+                is possimus quibusdam quam voluptatibus qui alias, cumque 
+                hic eligendi aspernatur veniam! Lorem ipsum dolor sit amet con
+                sectetur
+                 adipisicing elit. Doloremque culpa cu
+                 mque dolore voluptatibus tenetu
+                r nemo corporis obcaecati accusamus error amet architecto ad q
+                uam maiores, doloribus, maxime quo optio sed. Earum.
+            </p>
+        </div>
+     </div>
+    <!-- ====================================== -->
+    <script>
+        const scrollLine = document.querySelector('.scroll-progress');
+
+        function fillScrollLine(){
+            const windowHeight = window.innerHeight;
+            const fullHeight = document.querySelector('.content').clientHeight;
+            const scrolled = window.scrollY;
+            const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100;
+            
+            scrollLine.style.width = `${percentScrolled}%`;
+
+
+        };
+        function debounce(func, wait = 15, immediate) {
+            let timeout;
+
+            return function executedFunction() {
+            let context = this;
+            let args = arguments;
+                    
+                let later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+                };
+
+                let callNow = immediate && !timeout;
+                
+                clearTimeout(timeout);
+
+                timeout = setTimeout(later, wait);
+                
+                if (callNow) func.apply(context, args);
+            };
+        };
+
+        window.addEventListener('scroll', debounce(fillScrollLine));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+body {
+    background-image:url('./media/background-girl.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align:center;
+}
+.overlay {
+    transition: 0.3s ease all;
+}
+
+.title{
+    /* font-size: 19px; */
+    opacity:0;
+}
+
+.btn{
+    margin:20px;
+    padding:10px;
+    border:none;
+    border-radius: 15px;
+    color:black;
+    background-color:white;
+}
+.btn:hover{
+    background-image: linear-gradient(to right, white, grey);
+}
+.content{
+    /* margin:auto; */
+    padding:10px;
+    font-family:'Courier New', Courier, monospace;
+    opacity: 0;
+    border:1px solid grey;
+}
+.child{
+    padding:10px;
+    font-size: 19px;
+    text-decoration: none;
+    color: whitesmoke;
+    border:1px solid grey;
+}
+.child:hover{
+    color:aquamarine;
+    background-color:black;
+    transition: 0.3s ease all;
+}
+
+/* after adding open */
+
+body.open .overlay {
+    padding:20px;
+    background-color:rgba(0, 0, 0, 0.65);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+}
+body.open .title{
+    color:white;
+    opacity:1;
+    transition: 0.3s ease all;
+}
+body.open .content{
+    opacity:1;
+    transition: 0.3s ease all;
+}
+body.open .btn{
+    color:white;
+    background-color:grey;
+}
+body.open .btn:hover{
+    background-image: linear-gradient(to right, grey, white);
+}
+
